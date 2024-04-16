@@ -1,15 +1,17 @@
+import { UserButton, auth } from '@clerk/nextjs';
 import Image from 'next/image'
 import Link from 'next/link'
 
 const navIcons = [
   { src: '/assets/icons/search.svg', alt: 'search' },
   { src: '/assets/icons/black-heart.svg', alt: 'heart' },
-  { src: '/assets/icons/user.svg', alt: 'user' },
 ]
 
-const Navbar = () => {
+export default async function Navbar() {
+    const { userId } = auth();
   return (
     <header className="w-full">
+
       <nav className="nav">
         <Link href="/" className="flex items-center gap-1">
           <Image 
@@ -35,10 +37,21 @@ const Navbar = () => {
               className="object-contain"
             />
           ))}
-        </div>
+          <div>
+          {userId ? (
+            <div className='flex gap-4 items-center'>
+              <UserButton afterSignOutUrl='/' />
+            </div>
+          ) : (
+            <div className='flex gap-4 items-center'>
+              <Link href='/sign-up'>Sign up</Link>
+              <Link href='/sign-in'>Sign In</Link>
+            </div>
+          )}
+    </div>
+          </div>
       </nav>
     </header>
   )
 }
 
-export default Navbar
