@@ -1,44 +1,50 @@
-import Image from 'next/image'
-import Link from 'next/link'
-
-const navIcons = [
-  { src: '/assets/icons/search.svg', alt: 'search' },
-  { src: '/assets/icons/black-heart.svg', alt: 'heart' },
-  { src: '/assets/icons/user.svg', alt: 'user' },
-]
+import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <header className="w-full">
-      <nav className="nav">
+      <nav
+        className="nav"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 100,
+          // boxShadow: "0px 0px 4px blue",
+          backgroundColor: "white",
+        }}
+      >
         <Link href="/" className="flex items-center gap-1">
-          <Image 
+          <Image
             src="/assets/icons/logo.svg"
-            width={27}
-            height={27}
+            height={45}
+            width={45}
             alt="logo"
           />
 
           <p className="nav-logo">
-            Web<span className='text-primary'>Sleuth</span>
+            Web<span className="text-indigo-500">Sleuth</span>
           </p>
         </Link>
 
         <div className="flex items-center gap-5">
-          {navIcons.map((icon) => (
-            <Image 
-              key={icon.alt}
-              src={icon.src}
-              alt={icon.alt}
-              width={28}
-              height={28}
-              className="object-contain"
+          <Link
+            href="/components/product.tsx"
+            className="flex items-center gap-1"
+          >
+            <Image
+              src="/assets/icons/black-heart.svg"
+              height={35}
+              width={35}
+              alt="logo"
             />
-          ))}
+          </Link>
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

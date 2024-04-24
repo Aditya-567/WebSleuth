@@ -16,6 +16,14 @@
 }
 
 @layer utilities {
+  .container {
+    display: flex; /* This vertically centers the carousel if there's other content */
+    justify-content: flex-start; /* This aligns the carousel to the left */
+  }
+
+  .about-carousel {
+    @apply relative sm:px-10 py-5 sm:pt-20 pb-5 max-w-[400px] h-[500px] w-full bg-[#F2F4F7] rounded-[30px] sm:mx-auto;
+  }
   .btn {
     @apply py-4 px-4 bg-secondary hover:bg-opacity-70 rounded-[30px] text-white text-lg font-semibold;
   }
