@@ -1,5 +1,5 @@
 # 🛍️ WebSleuth
-WebSleuth is a product Price tracker application for E-commerce Websites, currently working only for amazon 
+WebSleuth , it is a product Price tracker application for E-commerce Websites, currently working only for amazon which help user to keep up with dynamic change in product price.
 
 ## It Produces
 <img align="left" src="https://cloud.githubusercontent.com/assets/532272/21507867/3376e9fe-cc4a-11e6-9350-7ec4f680da36.gif">
